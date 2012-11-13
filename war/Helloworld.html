@@ -29,12 +29,25 @@
 		</script>
 
 	</head>
+	
 	<body onload="initialize()">
+	
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
 		<div data-role="page">
 
 			<div data-role="header" data-theme="">
 				<a href="#page1" data-icon="gear" style="display:none">Settings</a>
-				<h1>Welcome Back Evan!</h1>
+				<h1>Welcome Back!</h1>
 				<a href="#" data-icon="gear" onclick="document.getElementById('').style.display='none'">Settings</a>
 				<div data-role="navbar">
 					<ul>
@@ -49,17 +62,26 @@
 						</li>
 					</ul>
 				</div>
-			</div><!-- /header -->
+			</div>
+			
+			<!-- /header -->
 
 			<div data-role="content" data-theme="" style='padding:0' style='height:100%'>
 				<div data-role="content" id='search_section' style='position:absolute; width:20%; height:81%; background:white;'>
-					<input type="text" name="search_text" id="search-query" value="Search Query" onclick="value='' "/>
+					<input type="text" name="search_place" id="search-query" value="Search Places..." onclick="value='' "/>
 					<button data-icon="search" id="search-button" >Go!</button>
 					<ul id="search_result_list" data-role="listview" style="margin-top:15px;">
-
 					</ul>
+					
+					<div style="position: absolute; bottom: 0px;">
+					<div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+					<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+					</div>
+					
 				</div>
+				
 				<div id="map_canvas" style="position:absolute; width:78%; height:85%; right:0px;"></div>
+				
 				<div data-role="fieldcontain" style="position:absolute; bottom:5%;	right:-80px; width:250px;">
 					    <fieldset data-role="controlgroup">
 						   <input type="checkbox" name="bikeways-checkbox" id="bikeways-checkbox" class="custom" data-mini="true" checked='checked' />
@@ -70,6 +92,8 @@
 						   <label for="cc-checkbox">Community Centers</label>
 					    </fieldset>
 				</div>
+				
+
 				<div id="lightbox-panel">
 					<!-- <h2 id='lightboxHeader'>Lightbox Panel</h2> -->
 					<!-- <div id='lightboxContent'>			 -->
@@ -92,8 +116,10 @@
 				<a href='#' data-role='button' data-icon='arrow-u'>Up</a>
 				<a href='#' data-role='button' data-icon='arrow-d'>Down</a>
 			</div>
-
-		</div><!-- /page -->
+			
+		</div>
+		
+		<!-- /page -->
 
 		<div data-role="page" id="routes" data-add-back-btn="true" data-back-btn-theme="">
 			<div data-role="header">
