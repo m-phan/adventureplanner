@@ -32,7 +32,16 @@
 	
 	<body onload="initialize()">
 	
-	<div id="fb-root"></div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -55,17 +64,17 @@
 							<a href="#routes" data-role="button" data-transition="flip">Routes</a>
 						</li>
 						<li>
-							<a href="@page2" data-role="button" data-shadow="false">Settings</a>
+							<a href="#userinfo" data-role="button" data-shadow="false">Settings</a>
 						</li>
 						<li>
-							<a href="@page3" data-role="button" data-shadow="true">Logout</a>
+							<a href="#login" data-role="button" data-shadow="true">Login</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 			
 			<!-- /header -->
-
+			
 			<div data-role="content" data-theme="" style='padding:0' style='height:100%'>
 				<div data-role="content" id='search_section' style='position:absolute; width:20%; height:81%; background:white;'>
 					<input type="text" name="search_place" id="search-query" value="Search Places..." onclick="value='' "/>
@@ -74,12 +83,12 @@
 					</ul>
 					
 					<div style="position: absolute; bottom: 0px;">
-					<div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false"></div>
 					<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+					<div class="fb-like" data-send="true" data-width="350" data-show-faces="true"></div>
 					</div>
 					
 				</div>
-				
+	
 				<div id="map_canvas" style="position:absolute; width:78%; height:85%; right:0px;"></div>
 				
 				<div data-role="fieldcontain" style="position:absolute; bottom:5%;	right:-80px; width:250px;">
@@ -120,6 +129,118 @@
 		</div>
 		
 		<!-- /page -->
+		
+		<div data-role="page" id="login" data-add-back-btn="true" data-back-btn-theme="">
+			<div data-role="header">
+				<h1> Courses </h1>
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#routes" data-role="button" data-transition="slide">Routes</a>
+						</li>
+						<li>
+							<a href="#userinfo" data-role="button" data-transition="slide">Settings</a>
+						</li>
+						<li>
+							<a href="#logout" data-role="button" data-shadow="true">Logout</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div data-role="content">
+				<h2>WELCOME TO </h2>
+				<h1><FONT COLOR="#008000"><strong>G-ADVENTURE Planner<strong></FONT></h1>
+				<h2> Let's get started! </h2>
+				
+				 UserID: <input type="text" name="userid" id="useridfield" value="Enter userID" onclick="value='' "/>
+				 Password: <input type="text" name="password" id="pwfield" value="Enter password" onclick="value='' "/>
+				
+				<button data-icon="arrow-r" id="submit-button" > LOGIN! </button> <br>
+				<button data-icon="arrow" id="register-button" > REGISTER! </button> <br>
+				
+				<div class="fb-comments" data-href="http://www.adventure-enjoylife.appspot.com/" data-num-posts="2" data-width="470"></div>
+				
+			</div>
+			<div data-role="footer">
+				<a href='#' data-role='button' data-icon='plus'>Add</a>
+				<a href='#' data-role='button' data-icon='arrow-u'>Up</a>
+				<a href='#' data-role='button' data-icon='arrow-d'>Down</a>
+			</div>
+			
+		</div>
+		
+		<!-- /page -->
+		
+		<div data-role="page" id="userinfo" data-add-back-btn="true" data-back-btn-theme="">
+			<div data-role="header">
+				<h1>Courses</h1>
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#routes" data-role="button" data-transition="slide">Routes</a>
+						</li>
+						<li>
+							<a href="#userinfo" data-role="button" data-transition="slide">Settings</a>
+						</li>
+						<li>
+							<a href="#logout" data-role="button" data-shadow="true">Logout</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div data-role="content">
+				
+				 Name: <input type="text" name="name" id="namefield" value="Enter name" onclick="value='' "/> 
+				 UserID: <input type="text" name="userid" id="useridfield" value="Enter userID" onclick="value='' "/>
+				 Password: <input type="text" name="password" id="pwfield" value="Enter password" onclick="value='' "/>
+				 Email: <input type="text" name="email" id="emailfield" value="Enter email" onclick="value='' "/> 
+				<button data-icon="arrow-r" id="submit-button" > SUBMIT </button>
+				
+			</div>
+			<div data-role="footer">
+				<a href='#' data-role='button' data-icon='plus'>Add</a>
+				<a href='#' data-role='button' data-icon='arrow-u'>Up</a>
+				<a href='#' data-role='button' data-icon='arrow-d'>Down</a>
+			</div>
+			
+		</div>
+		
+		<!-- /page -->
+		
+		<div data-role="page" id="logout" data-add-back-btn="true" data-back-btn-theme="">
+			<div data-role="header">
+				<h1>Courses</h1>
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#routes" data-role="button" data-transition="slide">Routes</a>
+						</li>
+						<li>
+							<a href="#userinfo" data-role="button" data-transition="slide">Settings</a>
+						</li>
+						<li>
+							<a href="#logout" data-role="button" data-shadow="true">Logout</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div data-role="content">
+				
+				 <center><img src="/images/logout.png" alt="logout msg"></center>
+				
+			</div>
+			<div data-role="footer">
+				<a href='#' data-role='button' data-icon='plus'>Add</a>
+				<a href='#' data-role='button' data-icon='arrow-u'>Up</a>
+				<a href='#' data-role='button' data-icon='arrow-d'>Down</a>
+			</div>
+			
+		</div>
+		
+		<!-- /page -->
 
 		<div data-role="page" id="routes" data-add-back-btn="true" data-back-btn-theme="">
 			<div data-role="header">
@@ -130,10 +251,10 @@
 							<a href="#routes" data-role="button" data-transition="slide">Routes</a>
 						</li>
 						<li>
-							<a href="@page2" data-role="button" data-shadow="false">Settings</a>
+							<a href="#userinfo" data-role="button" data-shadow="false">Settings</a>
 						</li>
 						<li>
-							<a href="@page3" data-role="button" data-shadow="true">Logout</a>
+							<a href="#logout" data-role="button" data-shadow="true">Logout</a>
 						</li>
 					</ul>
 				</div>
